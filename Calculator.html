@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        const firstInput = document.querySelector('#first-number');
+        const secondInput = document.querySelector('#second-number');
+        
+        const add = document.querySelector('#add-btn');
+        const minus = document.querySelector('#minus-btn');
+        const times = document.querySelector('#times-btn');
+        const divide = document.querySelector('#divide-btn');
+        const result = document.querySelector('#result')
+
+        function addCalculation(){
+            result.textContent = '运算结果';
+            let f = Number(firstInput.value) + Number(secondInput.value) ;
+            result.textContent += ' ' + f;
+        }
+        add.addEventListener('click', addCalculation)
+
+        function minusCalculation(){
+            result.textContent = '运算结果';
+            let f = Number(firstInput.value) - Number(secondInput.value) ;
+            result.textContent += ' ' + f;
+        }
+        minus.addEventListener('click', minusCalculation)
+
+        function timesCalculation(){
+            result.textContent = '运算结果';
+            let f = Number(firstInput.value) * Number(secondInput.value) ;
+            result.textContent += ' ' + f;
+        }
+        times.addEventListener('click', timesCalculation)
+
+        function divideCalculation(){
+            result.textContent = '运算结果';
+            let f = Number(firstInput.value) / Number(secondInput.value) ;
+            result.textContent += ' ' + f;
+        }
+        divide.addEventListener('click', divideCalculation)
+    </script>
+</body>
+</html>
