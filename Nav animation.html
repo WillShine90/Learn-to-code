@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animation1</title>
+    <style>
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      #whole{
+        text-align: center;
+        height: 40rem;
+        padding-top: 10rem;
+      }
+      p{
+        margin-bottom: 5px;
+        /* 变化参数 引用https://easings.net/cn#easeOutExpo */ 
+        transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      button{
+        margin-top: 3rem;
+      }
+      /* 蓝色条先隐藏 */ 
+      #bar{
+        visibility: hidden;
+        width: 0px;
+        height: 2px;
+        background-color: #007AFF;
+        margin: 0 auto;
+        /* 变化参数 引用https://easings.net/cn#easeOutExpo */ 
+        transition: visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1), width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="whole">
+      <p>Navigation</p>
+      <div id="bar"></div>
+      <button>Change Style</button>
+    </div>
+    <script>
+      const button = document.querySelector('button')
+      const nav = document.querySelector('p')
+      const bar = document.querySelector('#bar')
+      var clickCount = 0
+      function changeStyle(){
+        clickCount += 1;
+        if(clickCount%2 === 1){  //如果clickCount是奇数
+          nav.style.color = '#007AFF'; //文字变为蓝色
+          bar.style.visibility = 'visible';//蓝色条显示
+          bar.style.width = '78px';//蓝色条变长
+        } else { //如果clickCount是偶数
+          nav.style.color = 'black'; //文字变为黑色
+          bar.style.visibility = 'hidden'; //蓝色条隐藏
+          bar.style.width = '0px';//蓝色条变短
+        }
+      }
+      button.addEventListener('click',changeStyle)
+    </script>
+  </body>
+</html>
