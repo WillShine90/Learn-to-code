@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            两栏布局，左侧固定宽度，右侧根据浏览器宽度进行自适应变化，float方式
+        </title>
+        <style>
+            div{
+                box-sizing: border-box;
+                text-align: center;
+                height: 600px;
+                padding-top: 30%;
+            }
+            .left{
+                background-color: #B7DDFF;
+                float:left;
+                width: 300px;
+            }
+            .right{
+                background-color: #DBEEFF;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="left">
+            <p>左侧固定宽度</p>
+        </div>
+        <div class="right">
+            <p>右侧根据浏览器宽度进行自适应变化</p>
+        </div>
+    </body>
+</html>
