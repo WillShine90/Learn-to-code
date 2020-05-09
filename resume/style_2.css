@@ -1,0 +1,20 @@
+html{
+    font-family: PingFang SC;
+}
+div:first-child{
+    color:#ffffff;
+    background-color:#66A5FB;
+    width:20%;
+    height:850px;
+    float:left;
+    text-align:center;
+}
+div~div{
+    margin-left: 25%;
+}
+.info{
+    display: inline;
+}
+span{
+    font-weight: 900;
+}
