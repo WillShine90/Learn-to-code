@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            CSS变形
+        </title>
+        <style>
+            html{
+                font-family: PingFang SC;
+            }
+            
+            div {
+                display: inline-block;
+                width: 100px;
+                height: 100px;
+                background-color: skyblue;
+            }
+            #box2 {
+                transform: skewX(30deg);
+            }
+            #box3 {
+                transform: scaleX(0.5);
+            }
+            #box4 {
+                transform: rotate(45deg);
+            }
+            #box5 {
+                transform: translate(10px,20px);
+            }
+            #box6 {
+                background-color: pink;
+                transform: skewX(30deg);
+                transform: scaleX(0.5);
+                transform: rotate(45deg);
+                transform: translate(10px,20px);
+            }
+
+        </style>
+    </head>
+    <body>
+        
+            <div id="box1">原盒子</div>
+            <div id="box2">向左倾斜30度</div>
+            <div id="box3">x轴压缩2倍</div>
+            <div id="box4">旋转45度</div>
+            <div id="box5">x轴位移10px y轴位移20px</div>
+            <div id="box6">同时包含上述属性:-(</div>
+        
+    </body>
+</html>
