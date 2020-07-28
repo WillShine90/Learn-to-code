@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Flip Card</title>
+        <style>
+            .container {
+                transform-style: preserve-3d;
+                perspective: 1000;
+                -webkit-perspective: 1000;
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: 160px auto;
+                width: 250px;
+                height: 350px;
+            }
+            .card {
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 250px;
+                height: 350px;
+                transition: all 0.6s cubic-bezier(0.76, 0.06, 0.26, 0.95);
+            }
+            .backSide {
+                z-index: -3;
+            }
+            .container:hover .frontSide{
+                transform: rotateY(180deg);
+                backface-visibility: hidden;
+            }
+            .container:hover .backSide {
+                transform: rotateY(180deg);
+                /*旋转完毕后将背面的图片放在上面，否则正面的图会跳出来*/
+                z-index: 1;
+            }
+           
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="card frontSide">
+                <img src="正面.jpg" alt="正面">
+            </div>
+            <div class="card backSide">
+                <img src="反面.jpg" alt="反面">
+            </div>
+        </div>
+    </body>
+</html>
