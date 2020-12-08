@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Slider</title>
+        <style>
+            #navigation{
+                /* 纵向标签方法 */
+                position: absolute;
+                left: 78%;
+                top: 50%;
+                transform: translate(0,-50%);
+                /* 
+                横向标签方法
+                标签横向排列
+                display: flex;
+                align-items: center;
+                水平居中  
+                left: 50%;
+                transform: translate(-50%,0);
+                */
+            }
+            img{
+                /* 使图片充满屏幕 */
+                width: 100%;
+            }
+            .tag{
+                width: 140px;
+                height: 105px;
+                background-size: cover;
+                margin: 15px 10px;
+                border-radius: 5px;
+                transition: all 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+            }
+            .tag:hover{
+                transform: translate(0, -10px);
+            }
+            #navigation div:first-child{
+                background-image: url(cat34.jpg);
+            }
+            #navigation div:nth-child(2){
+                background-image: url(cat39.jpg);
+            }
+            #navigation div:nth-child(3){
+                background-image: url(cat40.jpg);
+            }
+            #navigation div:nth-child(4){
+                background-image: url(cat41.jpg);
+            }
+            #navigation div:nth-child(5){
+                background-image: url(cat49.jpg);
+            }
+            #navigation div:last-child{
+                background-image: url(cat50.jpg);
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <div id="background" >
+            <img id="img" src="cat48.jpg" alt="cat">
+        </div>
+        <div id="navigation" >
+            <div class="tag" id="cat34"></div>
+            <div class="tag" id="cat39"></div>
+            <div class="tag" id="cat40"></div>
+            <div class="tag" id="cat41"></div>
+            <div class="tag" id="cat49"></div>
+            <div class="tag" id="cat50"></div>
+        </div>
+    </body>
+    <!--script一定要放在body之后，否则变量为空-->
+    <script>
+        let image=document.querySelector('img');
+        /*还可再简化*/
+        /*点第1个标签换背景*/
+        let cat34=document.querySelector('#cat34');
+        function changeBackground34(){
+            image.src=('cat34.jpg');
+        }
+        cat34.addEventListener('click',changeBackground34)
+        /*点第2个标签换背景*/
+        let cat39=document.querySelector('#cat39');
+        function changeBackground39(){
+            image.src=('cat39.jpg');
+        }
+        cat39.addEventListener('click',changeBackground39)
+        /*点第3个标签换背景*/
+        let cat40=document.querySelector('#cat40');
+        function changeBackground40(){
+            image.src=('cat40.jpg');
+        }
+        cat40.addEventListener('click',changeBackground40)
+        /*点第4个标签换背景*/
+        let cat41=document.querySelector('#cat41');
+        function changeBackground41(){
+            image.src=('cat41.jpg');
+        }
+        cat41.addEventListener('click',changeBackground41)
+        /*点第5个标签换背景*/
+        let cat49=document.querySelector('#cat49');
+        function changeBackground49(){
+            image.src=('cat49.jpg');
+        }
+        cat49.addEventListener('click',changeBackground49)
+        /*点第6个标签换背景*/
+        let cat50=document.querySelector('#cat50');
+        function changeBackground50(){
+            image.src=('cat50.jpg');
+        }
+        cat50.addEventListener('click',changeBackground50)
+        /*点背景换回原图*/
+        let background = document.getElementById('background');
+        function changeBackgroundBack(){
+            image.src=('cat48.jpg');
+        }
+        background.addEventListener('click',changeBackgroundBack)
+    </script>
+</html>
